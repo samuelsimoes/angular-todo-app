@@ -1,0 +1,28 @@
+<div class="todo clearfix">
+  <div class="checkbox-container">
+    <input type="checkbox">
+  </div>
+
+  <div class="content">
+    <h2 class="title">
+      {{ todo.title }}
+      <small>
+        estimated deliver date {{ todo.deliver_date }}
+      </small>
+    </h2>
+
+    <p class="created-time">
+      <span class="glyphicon glyphicon-time"></span>
+      {{ todo.created_at }}
+    </p>
+
+    <p>
+      {{ todo.content }}
+    </p>
+
+    <button class="btn btn-danger btn-sm">
+      <span class="glyphicon glyphicon-trash"></span>
+      Remove
+    </button>
+  </div>
+</div>
