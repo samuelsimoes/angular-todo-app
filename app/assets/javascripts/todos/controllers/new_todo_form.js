@@ -10,7 +10,7 @@ angular.module("Todos").controller("NewTodoFormController", [
     });
 
     $scope.save = function () {
-      $scope.todo.$save(function () {
+      $scope.modelSubmitPromise = $scope.todo.$save(function () {
         $scope.$emit("new-todo-saved", $scope.todo);
       });
     };
