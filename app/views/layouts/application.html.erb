@@ -2,12 +2,14 @@
 <html>
 <head>
   <title>TodoApp</title>
-  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container">
+    <%= yield %>
+  </div>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag controller_path if javascript_exists? %>
 </body>
 </html>
