@@ -2,26 +2,26 @@
   Add a Todo
 </h2>
 
-<form action="">
+<form action="" ng-controller="NewTodoFormController" ng-submit="save()">
   <div class="row">
     <div class="col-md-8">
       <div class="form-group">
         <label for="title" class="control-label">Title</label>
-        <input class="form-control" id="title" type="text">
+        <input class="form-control" id="title" ng-model="todo.title" type="text">
       </div>
     </div>
 
     <div class="col-md-4">
       <div class="form-group">
         <label for="deliver_date">Estimated date</label>
-        <input class="form-control" id="deliver_date" type="text">
+        <input class="form-control" id="deliver_date" ng-model="todo.deliver_date" type="text">
       </div>
     </div>
   </div>
 
   <div class="form-group">
     <label for="description">Description</label>
-    <textarea class="form-control" id="description" rows="5"></textarea>
+    <textarea class="form-control" id="description" ng-model="todo.content" rows="5"></textarea>
   </div>
 
   <button type="submit" class="btn btn-primary">
