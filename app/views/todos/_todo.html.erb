@@ -7,13 +7,13 @@
     <h2 class="title">
       {{ todo.title }}
       <small ng-show="todo.deliver_date">
-        estimated deliver date {{ todo.deliver_date }}
+        estimated deliver date {{ todo.deliver_date | moment: "MMMM Do YYYY, h:mm:ss a" }}
       </small>
     </h2>
 
     <p class="created-time">
       <span class="glyphicon glyphicon-time"></span>
-      {{ todo.created_at }}
+      {{ todo.created_at | moment: "timeago" }}
     </p>
 
     <p>
