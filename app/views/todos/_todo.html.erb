@@ -1,12 +1,12 @@
-<div class="todo clearfix">
+<div class="todo clearfix" ng-repeat="todo in todos" ng-controller="TodoController">
   <div class="checkbox-container">
-    <input type="checkbox">
+    <input type="checkbox" ng-model="todo.done" ng-change="save()">
   </div>
 
   <div class="content">
     <h2 class="title">
       {{ todo.title }}
-      <small>
+      <small ng-show="todo.deliver_date">
         estimated deliver date {{ todo.deliver_date }}
       </small>
     </h2>
@@ -20,7 +20,7 @@
       {{ todo.content }}
     </p>
 
-    <button class="btn btn-danger btn-sm">
+    <button class="btn btn-danger btn-sm" ng-click="remove()">
       <span class="glyphicon glyphicon-trash"></span>
       Remove
     </button>
