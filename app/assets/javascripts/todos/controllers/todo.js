@@ -6,7 +6,7 @@ angular.module("Todos").controller("TodoController", [
     };
 
     $scope.remove = function () {
-      $scope.todo.$remove(function () {
+      $scope.modelSubmitPromise = $scope.todo.$remove(function () {
         $scope.$emit("todo-deleted", $scope.todo);
       });
     };
