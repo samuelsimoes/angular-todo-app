@@ -6,12 +6,15 @@ angular.module("Todos").controller("NewTodoFormController", [
     };
 
     $scope.$on("new-todo-saved", function () {
+      $scope.errors = {};
       buildNewModel();
     });
 
     $scope.save = function () {
       $scope.modelSubmitPromise = $scope.todo.$save(function () {
         $scope.$emit("new-todo-saved", $scope.todo);
+      }, function (responseHeaders) {
+        $scope.errors = responseHeaders.data.errors;
       });
     };
 
