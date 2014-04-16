@@ -1,6 +1,14 @@
 angular.module("Todos").controller("TodoController", [
   "$scope",
   function ($scope) {
+    var pooling = setInterval(function () {
+      $scope.$digest();
+    }, 5000);
+
+    $scope.$on("$destroy", function () {
+      clearInterval(pooling);
+    });
+
     $scope.save = function () {
       $scope.todo.$update();
     };
